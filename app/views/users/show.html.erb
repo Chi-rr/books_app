@@ -1,0 +1,8 @@
+<h1>マイページ</h1>
+<p>名前：<%= current_user.name %></p>
+<p>Eメール：<%= current_user.email %></p>
+<p>郵便番号：<%= current_user.postal_code %></p>
+<p>住所：<%= current_user.address %></p>
+<p>プロフィール：<%= current_user.profile %></p>
+
+<%= link_to "編集", edit_user_registration_path %>
