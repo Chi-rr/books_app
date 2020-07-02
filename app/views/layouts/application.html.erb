@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <p class="navbar-text pull-right">
+      <% if user_signed_in? %>
+        ログイン中：<strong><%= current_user.name %></strong>
+        <%if current_page?(books_path)%>
+          <%= link_to 'マイページ', users_show_path, class: 'navbar-link' %> |
+        <% else %>
+          <%= link_to "一覧に戻る", books_path, class: 'navbar-link' %> |
+        <% end %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'navbar-link'  %>
+      <% end %>
+    </p>
     <title>BooksApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +21,8 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
