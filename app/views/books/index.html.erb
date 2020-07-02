@@ -30,4 +30,6 @@
 
 <br>
 
-<%= link_to "#{t "New Book"}", new_book_path %>
+<%= link_to "#{t "New Book"}", new_book_path %><br>
+<%= paginate @books %><br>
+<%= page_entries_info @books %>
