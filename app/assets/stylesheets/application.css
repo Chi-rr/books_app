@@ -14,7 +14,7 @@
  *= require_self
  */
 
- .avatar img {
-     width: 200px;
-     height: 200px;
- }
+.avatar img {
+  width: 200px;
+  height: 200px;
+}
