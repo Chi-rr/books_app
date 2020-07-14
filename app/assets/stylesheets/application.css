@@ -18,3 +18,15 @@
   width: 200px;
   height: 200px;
 }
+
+.follow-form {
+  margin: 20px 0;   
+}
+
+.users {
+  margin: 30px 0;
+}
+
+li {
+  margin-top: 10px;
+}

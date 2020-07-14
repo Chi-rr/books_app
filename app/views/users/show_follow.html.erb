@@ -1,0 +1,13 @@
+<div class="row">
+  <div>
+    <h1><%= @user.name %></h1>
+    <%= render "stats" %>
+  </div>
+  <div>
+    <h2><%= @title %></h2>
+    <% if @users.any? %>
+      <%= render "follow_index" %>
+    <% end %>
+  </div>
+  <span><%= link_to "マイページに戻る", @user %></span>
+</div>
