@@ -5,19 +5,20 @@
       <% if user_signed_in? %>
         ログイン中：<strong><%= current_user.name %></strong>
         <%if current_page?(books_path)%>
-          <%= link_to 'マイページ', users_show_path, class: 'navbar-link' %> |
+          <%= link_to "マイページ", current_user, class: "navbar-link" %> |
         <% else %>
-          <%= link_to "一覧に戻る", books_path, class: 'navbar-link' %> |
+          <%= link_to "一覧に戻る", books_path, class: "navbar-link" %> |
         <% end %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'navbar-link'  %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "navbar-link"  %>
+        <%= link_to "ユーザー一覧", users_path %>
       <% end %>
     </p>
     <title>BooksApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_pack_tag "application" %>
   </head>
 
   <body>
