@@ -52,7 +52,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     # アカウント編集後、プロフィール画面へ
     def after_update_path_for(resource)
-      users_show_path(id: current_user.id)
+      current_user
     end
 
     # If you have extra params to permit, append them to the sanitizer.
