@@ -6,7 +6,9 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.page(params[:page])
+    @user = current_user
+    @users = @user.following
+    @books = Book.where(user: @user).or(Book.where(user: @users)).order(data: :desc).page(params[:page])
   end
 
   # GET /books/1
@@ -26,7 +28,7 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    @book = Book.new(book_params)
+    @book = current_user.books.build(book_params)
     if @book.save
       redirect_to @book, notice: t("Book was successfully created")
     else
@@ -59,6 +61,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :memo, :author, :picture)
+      params.require(:book).permit(:title, :memo, :author, :picture, :user)
     end
 end
