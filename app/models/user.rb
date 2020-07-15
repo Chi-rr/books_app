@@ -18,6 +18,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable
 
+  has_many :books, dependent: :destroy
+
   validates :name, presence: true
 
   def self.find_for_github_oauth(auth, signed_in_resource = nil)
