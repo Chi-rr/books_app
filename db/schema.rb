@@ -72,9 +72,6 @@ ActiveRecord::Schema.define(version: 2020_07_09_065718) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
-<<<<<<< HEAD
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-=======
   add_foreign_key "books", "users"
->>>>>>> 0e5b71d... Add column to Book
 end
