@@ -8,7 +8,8 @@ class BooksController < ApplicationController
   def index
     @user = current_user
     @users = @user.following
-    @books = Book.where(user: @user).or(Book.where(user: @users)).order(data: :desc).page(params[:page])
+    user_ids = @users.ids << @user.id
+    @books = Book.where(user_id: user_ids).order(data: :desc).page(params[:page])
   end
 
   # GET /books/1
