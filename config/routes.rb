@@ -11,9 +11,8 @@ Rails.application.routes.draw do
   root to: "books#index"
 
   resources :users do
-    member do
-      get :following, :followers
-    end
+    resources :followings, only: :index, controller: "users/followings"
+    resources :followers, only: :index, controller: "users/followers"
   end
 
   resources :relationships, only: [:create, :destroy]

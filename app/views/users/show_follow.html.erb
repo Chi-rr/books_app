@@ -1,13 +1,17 @@
 <div class="row">
   <div>
     <h1><%= @user.name %></h1>
-    <%= render "stats" %>
+    <%= render "users/stats" %>
   </div>
   <div>
     <h2><%= @title %></h2>
-    <% if @users.any? %>
-      <%= render "follow_index" %>
-    <% end %>
+    <ul class="users">
+      <% @users.each do |user| %>
+        <li>
+          <%= link_to user.name, user %>
+        </li>
+      <% end %>
+    </ul>
   </div>
   <span><%= link_to "マイページに戻る", @user %></span>
 </div>
