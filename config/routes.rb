@@ -7,8 +7,15 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
   resources :books
-  get "users/show"
+  resources :users, only: [:index, :show]
   root to: "books#index"
+
+  resources :users do
+    resources :followings, only: :index, controller: "users/followings"
+    resources :followers, only: :index, controller: "users/followers"
+  end
+
+  resources :relationships, only: [:create, :destroy]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -2,6 +2,7 @@ ja:
   activerecord:
     attributes:
       book:
+        user_name: 投稿者
         title: タイトル
         memo: メモ
         author: 著者
@@ -9,6 +10,7 @@ ja:
         created_at: 登録日
         updated_at: 更新日
   Books: 一覧
+  user_name: 投稿者
   title: タイトル
   memo: メモ
   author: 著者
