@@ -9,7 +9,13 @@ ja:
         picture: 画像
         created_at: 登録日
         updated_at: 更新日
-  Books: 一覧
+      report:
+        title: タイトル
+        user: ユーザー
+        body: 内容
+      comment:
+        body: コメント内容
+  Books: 本の一覧
   user_name: 投稿者
   title: タイトル
   memo: メモ
@@ -25,3 +31,16 @@ ja:
   Book was successfully created: 本を作成しました
   Book was successfully updated: 本を更新しました
   Book was successfully destroyed: 本を削除しました
+  Reports: 日報一覧
+  body: 内容
+  New report: 新規作成
+  Comments: コメント一覧
+  New Comment: 新規コメント
+  Editing Comment: コメントの編集
+  Editing Report: 日報の編集
+  report was successfully created: 日報を作成しました
+  report was successfully updated: 日報を更新しました
+  report was successfully destroyed: 日報を削除しました
+  Comment was successfully created: コメントを作成しました
+  Comment was successfully updated: コメントを編集しました
+  Comment was successfully destroyed: コメントを削除しました
