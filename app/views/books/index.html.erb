@@ -21,8 +21,10 @@
         <td><%= book.author %></td>
         <td><%= book.picture %></td>
         <td><%= link_to "#{t "show"}", book %></td>
-        <td><%= link_to "#{t "edit"}", edit_book_path(book) %></td>
-        <td><%= link_to "#{t "destroy"}", book, method: :delete, data: { confirm: t('Are you sure?') } %></td>
+        <% if book.user == current_user %>
+          <td><%= link_to "#{t "edit"}", edit_book_path(book) %></td>
+          <td><%= link_to "#{t "destroy"}", book, method: :delete, data: { confirm: t('Are you sure?') } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
