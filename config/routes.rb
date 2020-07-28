@@ -6,7 +6,14 @@ Rails.application.routes.draw do
     sessions: "users/sessions",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
-  resources :books
+  resources :books do
+    resources :comments, module: :books
+  end
+
+  resources :reports do
+    resources :comments, module: :reports
+  end
+
   resources :users, only: [:index, :show]
   root to: "books#index"
 
