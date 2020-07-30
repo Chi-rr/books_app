@@ -19,10 +19,10 @@
 </div>
 
 <% if @book.user == current_user %>
-  <%= link_to "#{t "edit"}", edit_book_path(@book) %> |
+  <%= link_to t("edit"), edit_book_path(@book) %> |
 <% end %>
 
-<%= link_to "#{t "back"}", books_path %>
+<%= link_to t("back"), books_path %>
 
 <%= render partial: "comments/comments", locals: {commentable: @book} %>
 <%= render partial: "comments/form", locals: {commentable: @book} %>

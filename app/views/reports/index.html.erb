@@ -1,4 +1,4 @@
-<h1><%= t "Reports"%></h1>
+<h1><%= t "Reports" %></h1>
 
 <table>
   <thead>
@@ -16,10 +16,10 @@
         <td><%= report.user.name %></td>
         <td><%= report.title %></td>
         <td><%= report.body %></td>
-        <td><%= link_to "#{t "show"}", report %></td>
+        <td><%= link_to t("show"), report %></td>
         <% if report.user == current_user %>
-          <td><%= link_to "#{t "edit"}", edit_report_path(report) %></td>
-          <td><%= link_to "#{t "destroy"}", report, method: :delete, data: { confirm: t("Are you sure?") } %></td>
+          <td><%= link_to t("edit"), edit_report_path(report) %></td>
+          <td><%= link_to t("destroy"), report, method: :delete, data: { confirm: t("Are you sure?") } %></td>
         <% end %>
       </tr>
     <% end %>
@@ -28,6 +28,6 @@
 
 <br>
 
-<%= link_to "#{t "New report"}", new_report_path %><br>
+<%= link_to t("New report"), new_report_path %><br>
 <%= paginate @reports %><br>
 <%= page_entries_info @reports %>
