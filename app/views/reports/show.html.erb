@@ -1,0 +1,23 @@
+<div class="show_page">
+  <strong><%= t "title" %>:</strong>
+  <%= @report.title %>
+</div>
+
+<div class="show_page">
+  <strong><%= t "body" %>:</strong>
+  <%= @report.body %>
+</div>
+
+<div class="show_page">
+  <strong><%= t "user_name" %>:</strong>
+  <%= @report.user.name %>
+</div>
+
+<% if @report.user == current_user %>
+  <%= link_to t("edit"), edit_report_path(@report) %> |
+<% end %>
+
+<%= link_to t("back"), reports_path %>
+
+<%= render partial: "comments/comments", locals: {commentable: @report} %>
+<%= render partial: "comments/form", locals: {commentable: @report} %>

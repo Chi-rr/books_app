@@ -27,7 +27,6 @@ class BooksController < ApplicationController
   end
 
   # POST /books
-  # POST /books.json
   def create
     @book = current_user.books.build(book_params)
     if @book.save
@@ -38,7 +37,6 @@ class BooksController < ApplicationController
   end
 
   # PATCH/PUT /books/1
-  # PATCH/PUT /books/1.json
   def update
     if @book.update(book_params)
       redirect_to @book, notice: t("Book was successfully updated")
@@ -48,7 +46,6 @@ class BooksController < ApplicationController
   end
 
   # DELETE /books/1
-  # DELETE /books/1.json
   def destroy
     @book.destroy
     redirect_to books_url, notice: t("Book was successfully destroyed")

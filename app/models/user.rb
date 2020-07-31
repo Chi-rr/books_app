@@ -19,6 +19,7 @@ class User < ApplicationRecord
          :omniauthable
 
   has_many :books, dependent: :destroy
+  has_many :reports, dependent: :destroy
 
   validates :name, presence: true
 

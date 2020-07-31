@@ -1,0 +1,6 @@
+<h2><%= t "Comments" %></h2>
+<% commentable.comments.each do |comment| %>
+  <div class="comment" >
+    <%= comment.body %>
+  </div>
+<% end %>
