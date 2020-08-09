@@ -1,4 +1,4 @@
-user_a:
+user_1:
   id: 1
   name: githubユーザーA
   postal_code: 111-1111
@@ -11,7 +11,7 @@ user_a:
   created_at: "2020-01-01 00:00:00"
   updated_at: "2020-01-01 00:00:00"
 
-user_b:
+user_2:
   id: 2
   name: ユーザーB
   postal_code: 222-2222
@@ -24,7 +24,7 @@ user_b:
   created_at: "2020-02-01 00:00:00"
   updated_at: "2020-02-01 00:00:00"
 
-user_c:
+user_3:
   id: 3
   name: ユーザーC
   postal_code: 333-3333
@@ -37,7 +37,7 @@ user_c:
   created_at: "2020-03-01 00:00:00"
   updated_at: "2020-03-01 00:00:00"
 
-user_d:
+user_4:
   id: 4
   name: ユーザーD
   postal_code: 444-4444
