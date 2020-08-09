@@ -4,7 +4,7 @@ require "application_system_test_case"
 
 class UsersTest < ApplicationSystemTestCase
   setup do
-    @user = users(:user_a)
+    @user = users(:user_1)
     login_as @user
   end
 

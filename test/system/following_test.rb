@@ -4,9 +4,9 @@ require "application_system_test_case"
 
 class FollowingTest < ApplicationSystemTestCase
   setup do
-    @user1 = users(:user_a)
-    @user2 = users(:user_b)
-    @user3 = users(:user_c)
+    @user1 = users(:user_1)
+    @user2 = users(:user_2)
+    @user3 = users(:user_3)
     login_as @user1
   end
 
@@ -27,8 +27,7 @@ class FollowingTest < ApplicationSystemTestCase
       click_button "フォローする"
       until find_button("commit").value == "フォロー解除"; end
     end
-
-    assert @user2.followers.count == 1
+    assert_equal(1, @user2.followers.count)
   end
 
   test "アンフォロー状態" do
@@ -38,13 +37,12 @@ class FollowingTest < ApplicationSystemTestCase
       click_button "フォロー解除"
       until find_button("commit").value == "フォローする"; end
     end
-
-    assert @user3.followers.count == 0
+    assert_equal(0, @user3.followers.count)
   end
 
   test "個人ページの統計表示" do
     visit user_path(@user1)
-    assert has_link?("0 フォロワー")
+    assert has_link?("1 フォロワー")
     assert has_link?("1 フォロー")
   end
 end
