@@ -23,7 +23,7 @@ class BooksTest < ApplicationSystemTestCase
     visit books_url
     click_on "本を追加"
 
-    within "form.book" do
+    within "form[name=book]" do
       fill_in "タイトル", with: @book.title
       fill_in "メモ", with: @book.memo
       fill_in "著者", with: @book.author
@@ -35,7 +35,7 @@ class BooksTest < ApplicationSystemTestCase
   test "本を編集して更新する" do
     visit edit_book_path(@book)
 
-    within "form.book" do
+    within "form[name=book]" do
       fill_in "タイトル", with: @book.title
       fill_in "メモ", with: @book.memo
       fill_in "著者", with: @book.author

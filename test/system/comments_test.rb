@@ -20,7 +20,7 @@ class CommentsTest <  ApplicationSystemTestCase
 
   test "本にコメントを作成する" do
     visit book_path(@book)
-    within "form.comment" do
+    within "form[name=comment]" do
       fill_in "コメント内容", with: @commnet1.body
       click_on "登録する"
     end
@@ -29,7 +29,7 @@ class CommentsTest <  ApplicationSystemTestCase
 
   test "日報にコメントを作成する" do
     visit report_path(@report)
-    within "form.comment" do
+    within "form[name=comment]" do
       fill_in "コメント内容", with: @commnet2.body
       click_on "登録する"
     end

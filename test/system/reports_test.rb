@@ -23,7 +23,7 @@ class ReportsTest < ApplicationSystemTestCase
     visit reports_url
     click_on "新規作成"
 
-    within ".report" do
+    within "form[name=report]" do
       fill_in "タイトル", with: @report.title
       fill_in "内容", with: @report.body
       click_on "登録する"
@@ -34,7 +34,7 @@ class ReportsTest < ApplicationSystemTestCase
   test "日報を編集して更新する" do
     visit edit_report_path(@report)
 
-    within ".report" do
+    within "form[name=report]" do
       fill_in "タイトル", with: @report.title
       fill_in "内容", with: @report.body
       click_on "更新する"
