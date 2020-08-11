@@ -26,12 +26,14 @@ ja:
   destroy: 削除
   back: 戻る
   New Book: 本を追加
+  Show Book: 本の詳細
   Editing Book: 編集
   Are you sure?: 本当に削除しますか？
   Book was successfully created: 本を作成しました
   Book was successfully updated: 本を更新しました
   Book was successfully destroyed: 本を削除しました
   Reports: 日報一覧
+  Show Report: 日報の詳細
   body: 内容
   New report: 新規作成
   Comments: コメント一覧
