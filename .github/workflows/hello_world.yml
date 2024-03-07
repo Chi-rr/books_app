@@ -1,0 +1,10 @@
+name: Hello World
+
+on: [push]
+
+jobs:
+  say_hello:
+    runs-on: self-hosted
+    steps:
+      - name: Print Hello World
+        run: echo "Hello World"
